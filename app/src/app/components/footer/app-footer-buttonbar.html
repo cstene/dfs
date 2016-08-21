@@ -1,0 +1,45 @@
+﻿<footer id="footer" class="navbar navbar-blue navbar-fixed-bottom">
+    <div class="container" layout layout-align="space-between">
+        <!--LEFT-->
+        <div ng-show="$ctrl.buttons.left.show" flex>
+            <a ng-show="$ctrl.buttons.left.show()" 
+               ng-click="$ctrl.buttons.left.onClick(item)"
+                class="btn btn-default btn-lg navbar-btn"
+                >
+                <i class="{{ $ctrl.buttons.left.iconCss}}"></i>
+                <span>
+                    &nbsp;{{ $ctrl.buttons.left.caption}}
+                </span>
+            </a>
+        </div>
+
+        <div ng-hide="$ctrl.buttons.left.show" flex>
+        </div>
+
+        <!--CENTER-->
+        <div ng-show="$ctrl.buttons.center.show" flex class="text-center">
+            <a ng-show="$ctrl.buttons.center.show()"
+               ng-click="$ctrl.buttons.center.onClick(item)"
+               class="btn btn-default btn-lg navbar-btn">
+                <span ng-if="$ctrl.buttons.center.caption.length">
+                    {{ $ctrl.buttons.center.caption || 'Alt'}}&nbsp;
+                </span>
+                <i class="{{ $ctrl.buttons.center.iconCss}}"></i>
+            </a>
+        </div>
+
+        <!--CENTER-->
+        <div ng-show="$ctrl.buttons.right.show" flex class="text-right">
+            <a ng-show="$ctrl.buttons.right.show()"
+               ng-click="$ctrl.buttons.right.onClick(item)"
+               class="btn btn-default btn-lg navbar-btn">
+                <span>
+                    {{ $ctrl.buttons.right.caption}}&nbsp;
+                </span>
+                <i class="{{ $ctrl.buttons.right.iconCss}}"></i>
+            </a>
+        </div>
+
+
+    </div>
+</footer>

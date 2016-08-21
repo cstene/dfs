@@ -1,0 +1,17 @@
+﻿<div class="app-seal-row" layout ng-class="{selected: $ctrl.isSelected}">
+
+    <div flex layout class="app-seal-input-group" >
+        <app-seal-input name="scannedSeal" flex
+                        model="$ctrl.model.scannedSeal"
+                        on-change="$ctrl.sealValueChanged('scannedSeal', value)"
+                        on-clear="$ctrl.scannedSealCleared()"
+                        on-blur="$ctrl.scannedSealBlur()"                                                  
+                        >
+        </app-seal-input>
+
+        <div layout>
+            <i ng-show="$ctrl.confirmed === false" class="fa fa-warning fa-2x fa-cog-red"></i>
+            <i ng-show="$ctrl.confirmed" class="fa fa-check fa-2x fa-cog-green"></i>
+        </div>
+    </div>
+</div>

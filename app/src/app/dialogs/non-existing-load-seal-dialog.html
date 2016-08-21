@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        <i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i>
+        Warning: Seal not found
+    </h3>
+</div>
+
+<form name="modalForm" novalidate class="modal-body app-form-validations">
+
+    <p>
+        The provided seal # <strong>{{$ctrl.sealNumber}}</strong>
+        Is not valid for the compartment <strong>{{$ctrl.compartment}}</strong>.
+    </p>
+    <p>
+        Please stop transloading this order until advised by the office. Use
+        <strong>Cancel Transload</strong> from the information button.
+    </p>
+
+    <div layout layout-padding>
+
+        <button flex class="btn btn-primary btn-lg" type="submit" ng-click="$ctrl.respond('cancel')">
+            Cancel
+            <span class="fa fa-undo fa-lg"></span>
+        </button>
+
+    </div>
+</form>

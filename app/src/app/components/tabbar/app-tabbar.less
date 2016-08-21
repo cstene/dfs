@@ -1,0 +1,24 @@
+﻿@import '../../app.less';
+
+app-tabbar {
+    width: 100%;
+    position: fixed;
+    top: 56px;
+    height: 40px;
+    margin: 0;
+    .app-fg-light;
+    .app-bg-positive;
+    z-index:900;
+
+    app-tab {
+        text-align: center;
+        .app-fg-light;
+        .app-bg-positive;
+    }
+
+    app-tab .active {
+        .app-bg-light;
+        .app-fg-royal;
+        font-weight: bold;
+    }
+}

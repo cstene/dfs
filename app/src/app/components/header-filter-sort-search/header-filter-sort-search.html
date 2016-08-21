@@ -1,0 +1,73 @@
+﻿<nav id="header" class="navbar navbar-inverse navbar-blue navbar-fixed-top" role="navigation">
+    <div class="header-filter-sort-search">
+        <div class="container">
+            <div class="navbar-header">
+                <div ng-show="!hfssCtrl.isSearching">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6">
+                            <strong><a class="title">{{hfssCtrl.title}}</a></strong><br />
+                            <div ng-if="hfssCtrl.filterOptions">
+                                <a class="dropdown-toggle title" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    {{hfssCtrl.filterValue}}
+                                    <i class="caret"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li ng-repeat="filterOption in hfssCtrl.filterOptions">
+                                        <a ng-click="hfssCtrl.filterSelected(filterOption)">{{filterOption}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6">
+                            <div class="pull-right">
+                                <button ng-click="hfssCtrl.showSearch()" type="button" class="btn">
+                                    <i class="fa fa-search fa-3x"></i>
+                                </button>
+                            </div>       
+                            <div class="pull-right">
+                                <button class="dropdown-toggle btn" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-sort fa-3x"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li ng-repeat="sortOption in hfssCtrl.sortOptions">
+                                        <a ng-click="hfssCtrl.sortSelected(sortOption)">
+                                            <i ng-if="sortOption == hfssCtrl.sortValue" class="fa fa-check"></i>
+                                            {{sortOption}}
+                                        </a>
+                                    </li>
+                                </ul>                                
+                            </div>              
+                        </div>
+                    </div>
+                </div>
+
+                <!--Search mode-->
+
+                <div ng-show="hfssCtrl.isSearching">
+                    <div class="row">
+                        <div class="col-xs-2 col-sm-2">
+                            <button ng-click="hfssCtrl.hideSearch()" type="button" class="btn pull-left">
+                                <i class="fa fa-arrow-left fa-3x"></i>
+                            </button>
+                        </div>
+                        <div class="col-xs-8 col-sm-8">
+                            <input class="form-control" name="searchFilter" type="text" 
+                                   autocomplete="on" 
+                                   style="margin-top:11px" 
+                                   focus-me="hfssCtrl.focusInput" 
+                                   ng-model="hfssCtrl.searchValue"
+                                   ng-change="hfssCtrl.searchChanged()"
+                                    />
+                        </div>
+                        <div class="col-xs-2 col-sm-2">
+                            <button type="button" class="btn pull-right">
+                                <i class="fa fa-search fa-3x"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,66 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        Transload Seal Override
+    </h3>
+</div>
+
+<form name="modalForm" novalidate class="modal-body app-form-validations">
+    <div class="form-group">
+        <label for="enteredSealValue">Seal#</label>
+        <input
+               app-trim-lead-zeroes
+               type="number"
+               id="enteredSealValue"
+               name="enteredSealValue"
+               class="form-control"
+               ng-model="$ctrl.seal"
+               app-restrict-keys="numbers"
+               allow-enter
+               allow-tab
+               allow-backspace
+               required
+        />
+    </div>
+
+    <div class="form-group app-clear-input-wrap">
+        <label for="employeeId">Employee Id</label>
+            <input type="number"
+                   autofocus="autofocus"
+                   id="employeeId"
+                   name="employeeId"
+                   class="form-control"
+                       ng-model="$ctrl.employeeId"
+                   app-restrict-keys="numbers"
+                   allow-enter
+                   allow-tab
+                   allow-backspace
+                   app-not-current-user
+                   required
+            />
+    </div>
+
+    <p>
+        By signing, you are confirming the need to manually enter an
+        original seal for compartment
+        <strong>{{$ctrl.compartment}}</strong>.
+    </p>
+
+    <div layout layout-padding>
+
+
+        <button flex class="btn btn-warning btn-lg" type="submit"
+                ng-disabled="modalForm.$invalid"
+                ng-click="$ctrl.captureSignature()">
+            Sign
+            <span class="fa fa-edit fa-lg"></span>
+        </button>
+
+        <span flex="5"></span>
+
+        <button flex class="btn btn-lg btn-primary" type="submit" ng-click="$ctrl.cancel()">
+            Cancel
+            <span class="fa fa-undo fa-lg"></span>
+        </button>
+
+    </div>
+</form>

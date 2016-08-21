@@ -1,0 +1,59 @@
+﻿<div title="headerTitle" cyan-header></div>
+<div class="last-sync-body-view container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="well">
+                <div class="header">
+                    <img src="img/integration-tools-icon.png" alt="Sync">
+                    <div class="heading">Sync</div>
+                    <div class="bar"></div>
+                </div>
+                <div id="body-wrapper">
+                    <div id="sync-time-caption" class="caption">Time of Last Sync</div>
+                    <div id="sync-time" class="value">
+                        {{ vm.lastSyncDate }}<br />
+                        {{ vm.lastSyncTime }}
+                    </div>
+                    <div style="display: none" id="sync-duration-wrapper">
+                        <div id="sync-duration-caption" class="caption">Sync Duration</div>
+                        <div id="sync-duration" class="value"></div>
+                    </div>
+                    <div class="bar"></div>
+                    <div id="sync-result-caption" class="caption">Sync Result</div>
+                    <div id="sync-result" class="value">{{ vm.lastSyncResult }}</div>
+                    <button ng-click="vm.toggleLog()" class="btn btn-primary btn-lg pull-right btn-sync-log">
+                        <i ng-class="(vm.logVisible) ? 'fa fa-chevron-up':'fa fa-chevron-down'"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="composite-view container sync-status-view" ng-show="vm.logVisible">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="items-container" class="well">
+                <dl ng-repeat="item in vm.syncStatus">
+                    <dt>Text</dt>
+                    <dd>{{ item.text }}</dd>
+                    <dt>Date</dt>
+                    <dd>{{ item.date }}</dd>
+                    <br />
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer" class="navbar navbar-blue navbar-fixed-bottom">
+    <div class="sync-footer-view">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <button ng-click="vm.back()" class="btn btn-default btn-lg navbar-btn pull-left"><i class="fa fa-chevron-left"></i>&nbsp;Back</button>
+                    <button ng-click="vm.reInit()" class="btn btn-default btn-lg navbar-btn">Re-Init&nbsp;<i class="fa fa-retweet"></i></button>
+                    <button ng-click="vm.sync()" class="btn btn-default btn-lg navbar-btn pull-right">Sync&nbsp;<i class="fa fa-refresh"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

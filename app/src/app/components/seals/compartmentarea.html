@@ -1,0 +1,63 @@
+﻿<section class="app-compartmentarea well" layout="column">
+    <header class="app-compartment-header" ng-class="$ctrl.compartmentClass">
+        {{ $ctrl.model.caption}}
+    </header>
+
+    <content layout="column">
+
+        <header layout>
+            <label flex>
+                <span>
+                    Original
+                </span>
+                <button flex class="btn btn-default"
+                        ng-click="$ctrl.onClone()"
+                        ng-disabled="$ctrl.disableClone">
+                    <span class="fa fa-clone fa-lg"></span>
+                </button>
+            </label>
+
+            <label flex>
+                <span>
+                    {{$ctrl.column2Label}}
+                </span>
+                <button class="btn btn-default"
+                        ng-disabled="$ctrl.disableIncrement"
+                        ng-click="$ctrl.onIncrement()">
+                    <span class="fa fa-plus-square fa-lg"></span>
+                </button>
+            </label>
+        </header>
+
+        <app-seal-row ng-repeat="item in $ctrl.model.seals track by $index"
+                      events="$ctrl.events"
+                      ng-model="item"
+                      ng-model-options="{allowInvalid: true}"
+                      actions="$ctrl.actions">
+        </app-seal-row>
+
+        <footer layout layout-align="space-between">
+
+            <button flex="65" class="btn btn-blue"
+                    ng-disabled="$ctrl.disableAddSeal"
+                    ng-click="$ctrl.addSeal($event)">
+                <span class="fa fa-plus-circle"></span>
+                <span>
+                    Add seal to <strong>{{ $ctrl.model.caption}}</strong>
+                </span>
+            </button>
+            <button flex="30" class="btn btn-warning"
+                    ng-click="$ctrl.removeEmptySeal($event)"
+                    ng-disabled="$ctrl.disableRemoveEmptySeal"
+                    >
+                <span class="fa fa-remove"></span>
+                <span>
+                    Delete
+                </span>
+
+            </button>
+
+        </footer>
+
+    </content>
+</section>

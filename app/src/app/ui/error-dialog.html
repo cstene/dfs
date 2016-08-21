@@ -1,0 +1,24 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" aria-label="Close" ng-click="$dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h3 class="modal-title text-danger">
+        <i class="fa fa-exclamation-triangle"></i>
+        {{ caption }}
+    </h3>
+</div>
+<div class="modal-body">
+    <p>{{ message }}</p>
+    <div ng-if="errorKeys" class="small">
+        <ul class="list-unstyled">
+            <li ng-repeat="key in errorKeys"><em>{{ key }}: {{ error[key] }}</em></li>
+        </ul>
+    </div>
+    <div ng-if="!errorKeys">
+        <small><em>{{ error }}</em></small>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-lg btn-primary" ng-click="$close('ok')">OK</button>
+    <button type="button" class="btn btn-lg btn-danger pull-left" ng-click="goToRegistration()">Exit</button>
+</div>

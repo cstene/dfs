@@ -1,0 +1,11 @@
+﻿[
+  {
+    "outputFile": "src/css/style.css",
+    "inputFile": "src/css/style.less",
+    "sourceMap": true
+  },
+  {
+    "outputFile": "www/css/style.css",
+    "inputFile": "www/css/style.less"
+  }
+]

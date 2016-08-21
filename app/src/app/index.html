@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulkmatic</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body class="cloud">
+    <div id="root">
+        <div ui-view></div>
+    </div>
+    
+    <script src="lib.js"></script>
+
+    <script src="app.js"></script>
+    <script src="templates.js"></script>
+
+    <!-- ReSharper disable once Html.EventNotResolved -->
+    <script type="text/javascript">
+        (function() {
+            if (window.cordova) {
+                document.addEventListener("deviceready", bootstrapApp, false);
+            } else {
+                bootstrapApp();
+            }
+
+            /**
+             * Starts the Angular application.
+             */
+            function bootstrapApp() {
+                angular.element(document).ready(function() {
+                    // Set strictDi to true in the build after running ngAnnotate.
+                    angular.bootstrap(document, ["app"], { strictDi: true });
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

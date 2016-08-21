@@ -1,0 +1,9 @@
+﻿<div>
+    <app-compartmentarea ng-repeat="item in $ctrl.collection | orderBy:'sequence':$ctrl.options.reverse track by item.sequence"
+                         model="item"
+                         disable-increment="$ctrl.isIncrementDisabled"
+                         disable-clone="$ctrl.isCloneDisabled"
+                         on-clone="$ctrl.onCloneOriginal()"
+                         on-increment="$ctrl.onIncrementReseal()"   >
+    </app-compartmentarea>
+</div>

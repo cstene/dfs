@@ -1,0 +1,283 @@
+/** VENDOR */
+@import '../vendor/bootstrap/less/bootstrap';
+@import (inline) '../vendor/font-awesome/css/font-awesome.css';
+@import (inline) '../vendor/angular-block-ui/dist/angular-block-ui.css';
+@import (inline) '../vendor/cyan-client-ng-bootstrap/dist/cyan-ng-bootstrap.css';
+@import (inline) '../vendor/animate.css/animate.css';
+@import (inline) '../vendor/angular-material/layouts/angular-material.layouts.css';
+/** BASE */
+@import './less/base/_mixins.less';
+@import './less/base/_variables.less';
+@import './less/base/_colors.less';
+/** MODULES */
+@import './less/modules/_animation.less';
+@import './less/modules/_forms.less';
+
+/* BEGIN: Adjust font locations */
+
+@font-face {
+  font-family: "Cyan-Thin";
+  src: url("img/font/c6cde420-95aa-4d44-8874-0fdf667e66a7.eot?#iefix");
+  src: url("img/font/c6cde420-95aa-4d44-8874-0fdf667e66a7.eot?#iefix") format("embedded-opentype"), url("img/font/09d74e12-003d-45c0-882d-271717150255.woff") format("woff"), url("img/font/87d85e95-0a98-468e-bfcf-9235dce604df.ttf") format("truetype"), url("img/font/e4f4fa64-8733-4776-916d-600581ba3059.svg#e4f4fa64-8733-4776-916d-600581ba3059") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cyan-Regular";
+  src: url("img/font/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix");
+  src: url("img/font/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix") format("eot"), url("img/font/88a238be-6477-4e71-bdc4-5a35bbf8d392.woff2") format("woff2"), url("img/font/842088d0-1ae2-40d0-8561-3c95761ba7a6.woff") format("woff"), url("img/font/c74505d5-13e8-47ed-94a8-630aab4da3e6.ttf") format("truetype"), url("img/font/6cd480d1-47d0-48b4-86bd-283db2cb9235.svg#6cd480d1-47d0-48b4-86bd-283db2cb9235") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.well-xs {
+  .well;
+  padding: 2px;
+}
+
+.hidden-when-short {
+  @media only screen and (max-height: 541px) {
+    display: none;
+  }
+}
+
+.app-spacer {
+  &.app-spacer-xs {
+    width: 5px;
+  }
+}
+
+/* rotated text*/
+.app-rotate {
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -o-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+
+.app-rotate-container {
+  padding: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.app-rotate-text {
+  .app-rotate;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.app-scroll {
+  display: block;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &[md-scroll-y] {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &[md-scroll-x] {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  &[md-scroll-xy] {
+  }
+  // For iOS allow disabling of momentum scrolling
+  // @see issue #2640.
+  &.autoScroll {
+    -webkit-overflow-scrolling: auto;
+  }
+}
+
+/* animations */
+
+/* utility*/
+.app-no-padding {
+  padding: 0;
+}
+
+/* header */
+.app-header {
+  i {
+    .app-fg-light;
+  }
+}
+
+.app-has-subheader {
+  margin-top: 40px;
+}
+
+/*#region Web Core fixes */
+// Cancel margins in Login view heading.
+.icon-title {
+  .bar {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+// Restore classes for overridden Bootstrap buttons.
+.btn-default-bs {
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+
+.btn-primary-bs {
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+
+.btn-success-bs {
+  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+
+.btn-info-bs {
+  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+
+.btn-warning-bs {
+  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+
+.btn-danger-bs {
+  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+
+// In BS3, labels can be buttons - undo bold font.
+.container .row [class*='col-'] .well form label.btn,
+.container-fluid .row [class*='col-'] .well form label.btn,
+.container .row-fluid [class*='col-'] .well form label.btn,
+.container-fluid .row-fluid [class*='col-'] .well form label.btn {
+  font-weight: normal;
+}
+
+/*#endregion */
+
+/*#region Browser fixes */
+// Remove the (often ugly, inconsistent) dropdown button from select elements.
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+// Remove the dropdown button from select elements in IE.
+select::-ms-expand {
+  display: none;
+}
+
+/*#endregion */
+
+.home-view {
+}
+
+.home-view-item {
+  .btn {
+    background-color: transparent;
+    color: white;
+    width: 100px;
+    margin-top: 25px;
+  }
+
+  .badge-notify {
+    background: red;
+    position: relative;
+    top: -90px;
+    left: 50px;
+    display: table;
+  }
+}
+
+.header-filter-sort-search {
+  .title {
+    color: white;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-left: 5px;
+    white-space: nowrap;
+  }
+
+  .btn {
+    background-color: transparent;
+    color: white;
+  }
+
+  .dropdown-menu {
+    font-size: 30px;
+  }
+}
+
+.searchclear {
+  color: #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  height: 14px;
+  margin: auto;
+  position: absolute !important;
+  right: 10px;
+  z-index: 99999999;
+}
+
+form.app-show-validations {
+
+  [ng-form].ng-invalid {
+    border: 1px solid @assertive;
+    border-radius: 3px;
+  }
+
+  input[type=text].ng-invalid,
+  input[type=number].ng-invalid,
+  select.ng-invalid {
+    border: 1px solid @assertive;
+    background-color: @assertive-light;
+  }
+
+  input[readonly=readonly].ng-invalid {
+    border: 1px solid @assertive;
+  }
+
+  bsc-yes-no-btn.ng-invalid {
+    background-color: @assertive;
+    border: 4px solid @assertive;
+    border-radius: 6px;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+}
+
+.app-section {
+
+  border: solid 2px @positive;
+
+  margin-bottom: 1em;
+  padding: 2px;
+  border-radius: 4px;
+
+  &.no-border {
+    margin:0;
+    border: none;
+  }
+
+  .app-section-header {
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 2px;
+    text-align: center;
+    .app-fg-light;
+    .app-bg-positive;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+
+  .app-section-content {
+    border: solid 1px @positive;
+    border-radius: 2px;
+  }
+
+}

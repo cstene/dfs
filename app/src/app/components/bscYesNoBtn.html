@@ -1,0 +1,15 @@
+﻿<div class="bsc-yes-no-btn btn-group btn-group-lg">
+    <button class="btn btn-default"
+            ng-class="$ctrl.yesCss"
+            ng-click="$ctrl.setYesValue()"
+            ng-disabled="$ctrl.isDisabled">
+        {{$ctrl.yesDisplay}}
+    </button>
+
+    <button class="btn btn-default"
+            ng-class="$ctrl.noCss"
+            ng-click="$ctrl.setNoValue()"
+            ng-disabled="$ctrl.isDisabled">
+        {{$ctrl.noDisplay}}
+        </button>
+</div>

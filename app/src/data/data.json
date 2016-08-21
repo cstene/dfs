@@ -1,0 +1,1613 @@
+﻿{
+  "inserts": [
+    {
+      "nodeId": "9e4516f7-39d2-4f85-9feb-a5c300f9458a",
+      "type": "BulkConfig",
+      "id": "TenantConfig",
+      "parentType": null,
+      "parentId": null,
+      "title": "Bulkmatic Configuration",
+      "props": {
+        "data_lookup_terminal": {
+          "010": {
+            "terminal": "010",
+            "terminalName": "SG&A"
+          },
+          "035": {
+            "terminal": "035",
+            "terminalName": "HUBRNY"
+          },
+          "030": {
+            "terminal": "030",
+            "terminalName": "Chicago Heights IL"
+          },
+          "089": {
+            "terminal": "089",
+            "terminalName": "Hodgkins IL"
+          }
+        },
+        "data_lookup_railyard": {
+          "10chil": {
+            "terminal": "001",
+            "railyardCode": "10CHIL",
+            "railroadCode": "NS",
+            "railyardName": "103RD STREET YARD"
+          },
+          "buchi2": {
+            "terminal": "030",
+            "railyardCode": "BUCHI2",
+            "railroadCode": "UP",
+            "railyardName": "CHICAGO HTS YARD"
+          },
+          "hohoi1": {
+            "terminal": "089",
+            "railyardCode": "HOHOI1",
+            "railroadCode": "BNSF",
+            "railyardName": "HODGKINS YARD"
+          },
+          "hubrny": {
+            "terminal": "035",
+            "railyardCode": "HUBRNY",
+            "railroadCode": "BNSF",
+            "railyardName": "Hunts Point Railyard"
+          },
+          "spspsc": {
+            "terminal": "001",
+            "railyardCode": "SPSPSC",
+            "railroadCode": "CSX",
+            "railyardName": "SPARTANBURG"
+          }
+        },
+        "data_lookup_un_numbers": [ 1208, 1267, 1268, 1270, 1760, 1789, 1824, 1866, 1987, 1993, 2187, 2582, 3077, 3082, 3253, 3262, 3267 ],
+        "outbound_require_top_seals": false
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "08d55892-e64f-4a4f-903b-a5d80168e27b",
+      "type": "BulkInbound",
+      "id": "286085",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car TILX56591, NORTH DAKOTA MILL",
+      "props": {
+        "carId": 286085,
+        "carNumber": "TILX56591",
+        "requestDate": "2016-03-14T13:45:47.13",
+        "terminal": "089",
+        "railyardCode": "HOHOI1",
+        "track": "50",
+        "spot": 1,
+        "trackSpot": "50.1",
+        "dateShipped": "2015-02-19T00:00:00",
+        "dateArrived": "2015-02-19T00:00:00",
+        "datePlaced": null,
+        "shipper": "NORTH DAKOTA MILL",
+        "shipperSeals": "486966-75",
+        "commodity": "WHIFLO",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 1,
+        "airSlideInd": 0,
+        "photos": [
+          {
+            "bitsPerPixel": 24,
+            "fileSize": 9345,
+            "fileUri": "/img/rc.jpg",
+            "format": "JPEG_411",
+            "height": 270,
+            "width": 420,
+            "created": "2015-02-19T00:00:00",
+            "fileName": "rc.jpg",
+            "fileSizeKb": 9.345
+          }
+        ]
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "a3e082f0-ef3e-4dd6-9475-a5d80168e275",
+      "type": "BulkInbound",
+      "id": "286029",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car CEFX50174, CHEVRON PHILLIPS",
+      "props": {
+        "carId": 286029,
+        "shipper": "CHEVRON PHILLIPS",
+        "hazmatInd": 1,
+        "shipperSeals": "21384",
+        "compartmentQuantity": 4,
+        "commodity": "POLYETH",
+        "dateShipped": "2015-02-18T00:00:00",
+        "terminal": "089",
+        "carNumber": "CEFX50174",
+        "railyardCode": "HOHOI1",
+        "requestDate": "2016-04-04T09:57:20.007",
+        "airSlideInd": 0,
+        "inspStatus": "IN PROGRESS",
+        "carStatus": "SHIPPED",
+        "comment": "line_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\nline_abcdefghijklmnopqrstufwxyz\n",
+        "track": "50",
+        "spot": 2,
+        "trackSpot": "50.2",
+        "density": 1,
+        "inspBy": "100211"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "bab59b9a-ef36-4c1e-8df9-a5d80168e27b",
+      "type": "BulkInbound",
+      "id": "286146",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car TILX56562, NORTH DAKOTA MILL",
+      "props": {
+        "carId": 286146,
+        "carNumber": "TILX56562",
+        "requestDate": "2016-03-14T13:45:47.13",
+        "terminal": "089",
+        "railyardCode": "HOHOI1",
+        "dateShipped": "2015-02-20T00:00:00",
+        "dateArrived": null,
+        "datePlaced": null,
+        "shipper": "NORTH DAKOTA MILL",
+        "shipperSeals": "484171-80",
+        "commodity": "WHIFLO",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 2,
+        "airSlideInd": 0,
+        "shipperCode": "NOHOIL",
+        "commentId": 0,
+        "comment": null,
+        "track": "50",
+        "spot": 3,
+        "trackSpot": "50.3"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "ef4ab780-72bf-4e2b-b9e2-9ecf22b93042",
+      "type": "BulkInbound",
+      "id": "906146",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car TILX56100, NORTH DAKOTA MILL",
+      "props": {
+        "carId": 906146,
+        "carNumber": "TILX56100",
+        "requestDate": "2016-03-14T13:45:47.13",
+        "terminal": "089",
+        "railyardCode": "HOHOI1",
+        "dateShipped": "2015-02-20T00:00:00",
+        "dateArrived": null,
+        "datePlaced": null,
+        "shipper": "NORTH DAKOTA MILL",
+        "shipperSeals": "484171-80",
+        "commodity": "WHIFLO",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 2,
+        "airSlideInd": 0,
+        "shipperCode": "NOHOIL",
+        "commentId": 0,
+        "comment": null,
+        "track": "50"
+      },
+      "refs": { }
+    },
+
+    {
+      "nodeId": "ac739494-408c-47ad-8637-932ab604f45d",
+      "type": "BulkInbound",
+      "id": "906147",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car TILX55100, NORTH DAKOTA MILL",
+      "props": {
+        "carId": 906147,
+        "carNumber": "TILX55100",
+        "requestDate": "2016-03-14T13:45:47.13",
+        "terminal": "089",
+        "railyardCode": "HOHOI1",
+        "dateShipped": "2015-02-20T00:00:00",
+        "dateArrived": null,
+        "datePlaced": null,
+        "shipper": "NORTH DAKOTA MILL",
+        "shipperSeals": "484171-80",
+        "commodity": "WHIFLO",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 2,
+        "airSlideInd": 0,
+        "shipperCode": "NOHOIL",
+        "commentId": 0,
+        "comment": null,
+        "track": "50"
+      },
+      "refs": { }
+    },
+
+    {
+      "nodeId": "57b2da7b-e162-4ffe-9a81-a5d80168e27b",
+      "type": "BulkInbound",
+      "id": "286131",
+      "parentType": "BulkRailyard",
+      "parentId": "HOHOI1",
+      "title": "Car SHPX463789, CHEVRON PHILLIPS",
+      "props": {
+        "carId": 286131,
+        "carNumber": "SHPX463789",
+        "requestDate": "2016-03-14T13:45:47.13",
+        "terminal": "089",
+        "railyardCode": "HOHOI1",
+        "track": "28",
+        "spot": null,
+        "dateShipped": "2015-02-22T00:00:00",
+        "dateArrived": "2015-02-19T00:00:00",
+        "datePlaced": "2015-02-19T00:00:00",
+        "shipper": "CHEVRON PHILLIPS",
+        "shipperSeals": "14266",
+        "commodity": "POLYETH",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 4,
+        "airSlideInd": 0,
+        "inspStatus": "IN PROGRESS",
+        "inspBy": "007"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "53640876-a8d6-4473-8bf3-a5d80168e275",
+      "type": "BulkInbound",
+      "id": "286213",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car UTLX666884, DOW CHEMICAL",
+      "props": {
+        "carId": 286213,
+        "carNumber": "UTLX666884",
+        "requestDate": "2016-03-14T13:45:47.13",
+        "terminal": "030",
+        "railyardCode": "BUCHI2",
+        "track": "77",
+        "spot": 10,
+        "dateShipped": "2015-02-20T00:00:00",
+        "dateArrived": null,
+        "datePlaced": null,
+        "shipper": "DOW CHEMICAL",
+        "shipperSeals": "372690-693",
+        "commodity": "POLYOL",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 1,
+        "airSlideInd": 0
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "600c2571-4e12-4515-ab15-a5d80168e275",
+      "type": "BulkInbound",
+      "id": "286220",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car UTLX666137, DOW CHEMICAL",
+      "props": {
+        "carId": 286220,
+        "carNumber": "UTLX666137",
+        "requestDate": "2016-03-14T13:45:47.13",
+        "terminal": "030",
+        "railyardCode": "BUCHI2",
+        "track": "35",
+        "spot": null,
+        "dateShipped": "2015-02-23T00:00:00",
+        "dateArrived": null,
+        "datePlaced": null,
+        "shipper": "DOW CHEMICAL",
+        "shipperSeals": "480065,480066,480020",
+        "commodity": "TRITON",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 1,
+        "airSlideInd": 0
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "240c7a86-02ed-4219-93a6-a5d80168e275",
+      "type": "BulkInbound",
+      "id": "286144",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car UTCX53945, BRASKEM PP AMERICAS",
+      "props": {
+        "carId": 286144,
+        "carNumber": "UTCX53945",
+        "requestDate": "2016-03-14T13:45:47.13",
+        "terminal": "030",
+        "railyardCode": "BUCHI2",
+        "track": null,
+        "spot": null,
+        "dateShipped": "2015-02-23T00:00:00",
+        "dateArrived": null,
+        "datePlaced": null,
+        "shipper": "BRASKEM PP AMERICAS",
+        "shipperSeals": "045456",
+        "commodity": "POLYPRO",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 4,
+        "airSlideInd": 0
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "3dfa44e3-f677-46f0-8db1-a5e600f799b1",
+      "type": "BulkInbound",
+      "id": "286354",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car DANIELLEAD, INVISTA",
+      "props": {
+        "carId": 286354,
+        "carNumber": "DANIELLEAD",
+        "requestDate": "2016-04-12T09:46:37.18",
+        "terminal": "030",
+        "railyardCode": "BUCHI2",
+        "track": null,
+        "spot": null,
+        "dateShipped": "2016-03-15T00:00:00",
+        "dateArrived": null,
+        "datePlaced": null,
+        "shipper": "INVISTA",
+        "shipperSeals": null,
+        "commodity": "ADIPIC",
+        "hazmatInd": 1,
+        "density": 0,
+        "unClassCode": "9",
+        "compartmentQuantity": 1,
+        "airSlideInd": 0,
+        "shipperCode": "INCHI8",
+        "commentId": 0,
+        "comment": null
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "f3f94e63-4330-4d4b-ab0d-a6190137ca3e",
+      "type": "BulkOutbound",
+      "id": "284040",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car UTCX1419, BRASKEM PP AMERICAS",
+      "props": {
+        "carId": 284040,
+        "carNumber": "UTCX1419",
+        "requestDate": "2016-06-02T13:54:50.627",
+        "terminal": "030",
+        "railyardCode": "BUCHI2",
+        "track": "886",
+        "spot": 80,
+        "shipper": "BRASKEM PP AMERICAS",
+        "commodity": "POLYPRO",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 4,
+        "shipperCode": "BRCHI5",
+        "commentId": 0,
+        "comment": null,
+        "fumigatedInd": 0,
+        "density": 0,
+        "remainingWgt": -740,
+        "ibGraffitiInd": 1,
+        "ibDamageInd": 0,
+        "seals": [
+          {
+            "area": "top",
+            "compartment": "A",
+            "sequence": 1,
+            "original": "88794"
+          },
+          {
+            "area": "top",
+            "compartment": "A",
+            "sequence": 2,
+            "original": "88794"
+          },
+          {
+            "area": "top",
+            "compartment": "A",
+            "sequence": 3,
+            "original": "88794"
+          },
+          {
+            "area": "bottom",
+            "compartment": "A",
+            "sequence": 1,
+            "original": "1374339"
+          },
+          {
+            "area": "bottom",
+            "compartment": "A",
+            "sequence": 2,
+            "original": "1374340"
+          },
+          {
+            "area": "top",
+            "compartment": "AC",
+            "sequence": 1,
+            "original": "88794"
+          },
+          {
+            "area": "top",
+            "compartment": "AC",
+            "sequence": 2,
+            "original": "88794"
+          },
+          {
+            "area": "bottom",
+            "compartment": "AC",
+            "sequence": 1,
+            "original": "1382799"
+          },
+          {
+            "area": "bottom",
+            "compartment": "AC",
+            "sequence": 2,
+            "original": "1382800"
+          },
+          {
+            "area": "top",
+            "compartment": "B",
+            "sequence": 1,
+            "original": "88794"
+          },
+          {
+            "area": "top",
+            "compartment": "B",
+            "sequence": 2,
+            "original": "88794"
+          },
+          {
+            "area": "top",
+            "compartment": "B",
+            "sequence": 3,
+            "original": "88794"
+          },
+          {
+            "area": "bottom",
+            "compartment": "B",
+            "sequence": 1,
+            "original": "1380507"
+          },
+          {
+            "area": "bottom",
+            "compartment": "B",
+            "sequence": 2,
+            "original": "1380508"
+          },
+          {
+            "area": "top",
+            "compartment": "BC",
+            "sequence": 1,
+            "original": "88794"
+          },
+          {
+            "area": "top",
+            "compartment": "BC",
+            "sequence": 2,
+            "original": "88794"
+          },
+          {
+            "area": "bottom",
+            "compartment": "BC",
+            "sequence": 1,
+            "original": "1386651"
+          },
+          {
+            "area": "bottom",
+            "compartment": "BC",
+            "sequence": 2,
+            "original": "1386652"
+          }
+        ]
+      },
+      "refs": { }
+    },
+
+    {
+    "nodeId": "d73d0eea-b064-40e1-8600-a6190137ca38",
+    "type": "BulkOutbound",
+    "id": "285073",
+    "parentType": "BulkRailyard",
+    "parentId": "BUCHI2",
+    "title": "Car FHRX628627, FLINT HILLS",
+    "props": {
+        "carId": 285073,
+        "carNumber": "FHRX628627",
+        "requestDate": "2016-06-02T13:54:50.63",
+        "terminal": "030",
+        "railyardCode": "BUCHI2",
+        "track": "884",
+        "spot": 30,
+        "shipper": "FLINT HILLS",
+        "commodity": "POLYPRO",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "compartmentQuantity": 4,
+        "shipperCode": "FLCHI2",
+        "commentId": 0,
+        "comment": null,
+        "fumigatedInd": 0,
+        "density": 0,
+        "remainingWgt": 47090,
+        "ibGraffitiInd": 0,
+        "ibDamageInd": 0,
+        "seals": [
+            {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "A1546"
+            },
+            {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "A1546"
+            },
+            {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 3,
+                "original": "A1546"
+            },
+            {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "1373985"
+            },
+            {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "1373986"
+            },
+            {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "A1155"
+            },
+            {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "A1546"
+            },
+            {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "1373983"
+            },
+            {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "1373984"
+            },
+            {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "A1546"
+            },
+            {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "A1546"
+            },
+            {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 3,
+                "original": "A1546"
+            },
+            {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "1374687"
+            },
+            {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "1374688"
+            },
+            {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "A1546"
+            },
+            {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "A1546"
+            },
+            {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "1373981"
+            },
+            {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "1373982"
+            }
+        ]
+    },
+    "refs": {}
+},
+    {
+      "nodeId": "bf81c60e-b228-4d8a-8bbe-a61301202b35",
+      "type": "BulkOutbound",
+      "id": "286331",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Car INVX029846, INVISTA",
+      "props": {
+        "carId": 286331,
+        "density": 0,
+        "shipper": "INVISTA",
+        "ibGraffitiInd": 0,
+        "track": "01",
+        "hazmatInd": 1,
+        "remainingWgt": 968,
+        "compartmentQuantity": 4,
+        "commentId": 0,
+        "spot": 33,
+        "seals": [
+          {
+            "original": "11",
+            "sequence": 1,
+            "compartment": "A",
+            "area": "top"
+          },
+          {
+            "original": "11",
+            "sequence": 1,
+            "compartment": "A",
+            "area": "bottom"
+          },
+          {
+            "original": "33",
+            "sequence": 2,
+            "compartment": "A",
+            "area": "bottom"
+          },
+          {
+            "original": "44",
+            "sequence": 3,
+            "compartment": "A",
+            "area": "bottom"
+          },
+          {
+            "original": "22",
+            "sequence": 1,
+            "compartment": "AC",
+            "area": "top"
+          },
+          {
+            "original": "22",
+            "sequence": 1,
+            "compartment": "AC",
+            "area": "bottom"
+          },
+          {
+            "original": "44",
+            "sequence": 1,
+            "compartment": "B",
+            "area": "top"
+          },
+          {
+            "original": "44",
+            "sequence": 1,
+            "compartment": "B",
+            "area": "bottom"
+          },
+          {
+            "original": "33",
+            "sequence": 1,
+            "compartment": "BC",
+            "area": "top"
+          },
+          {
+            "original": "33",
+            "sequence": 1,
+            "compartment": "BC",
+            "area": "bottom"
+          }
+        ],
+        "commodity": "ADIPIC",
+        "terminal": "030",
+        "ibDamageInd": 0,
+        "carNumber": "INVX029846",
+        "fumigatedInd": 0,
+        "shipperCode": "INCHI8",
+        "railyardCode": "BUCHI2",
+        "requestDate": "2016-06-02T13:54:50.64",
+        "unClassCode": "9",
+        "inspStatus": "IN PROGRESS",
+        "photos": [ ],
+        "inspBy": "100211",
+        "inspByType": "L",
+        "localStartDateTime": "06/09/2016 02:52 pm"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "e6b7a7e3-15b6-4a40-a3ff-a64e0167110c",
+      "type": "BulkTransload",
+      "id": "1155425",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Order 1155425",
+      "props": {
+        "terminal": "030",
+        "orderId": 1155425,
+        "requestDate": "2016-07-12T09:44:33.85",
+        "compNum": null,
+        "shipperCode": "BRCHI5",
+        "shipperName": "BRASKEM PP AMERICAS",
+        "shipperOrder": "split",
+        "commodity_Id": "POLYPRO",
+        "commDesc": "PLASTIC POLYPROPYLENE",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "density": 9.5,
+        "productCode": "INSPIRE-6021N",
+        "productName": "INSPIRE-6021N",
+        "unitsOrdered": 45000,
+        "unitOfMeasureCode": "lbs",
+        "trailer": "C7000",
+        "trailerTagId": "123",
+        "reloadTrailerInd": 0,
+        "latestDelivery": "2016-07-11T15:00:00",
+        "loaderType": "L",
+        "loaderId": 100211,
+        "preload": "L",
+        "commentId": null,
+        "comment": null,
+        "productId": 6198,
+        "railyardCode": null,
+        "liqVacTestInd": 1,
+        "liqCompart1Gals": 1,
+        "liqCompart2Gals": 2,
+        "liqCompart3Gals": 3,
+        "liqCompart4Gals": 4,
+        "liqAdjustedLoadWgt": 40000,
+        "railcars": [
+          {
+            "orderId": 1155425,
+            "seqNum": 1,
+            "carId": 285321,
+            "compContentId": 289598,
+            "compartmentQuantity": 4,
+            "carNumber": "UTCX46866",
+            "track": "885",
+            "spot": 98,
+            "railyardCode": "BUCHI2",
+            "splitUnits": 3700,
+            "compart01Ind": 1,
+            "compart02Ind": 1,
+            "compart03Ind": 1,
+            "compart04Ind": 1,
+            "seals": [
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "1"
+              },
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "2"
+              },
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 3,
+                "original": "3"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "4"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "5"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "6"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "7"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "8"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "9"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "10"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "11"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 3,
+                "original": "12"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "13"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "14"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "15"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "16"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "17"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "18"
+              }
+            ]
+          },
+          {
+            "orderId": 1155425,
+            "seqNum": 2,
+            "carId": 285322,
+            "compContentId": 289599,
+            "compartmentQuantity": 4,
+            "carNumber": "UTCX46798",
+            "track": "885",
+            "spot": 97,
+            "railyardCode": "BUCHI2",
+            "splitUnits": 41300,
+            "compart01Ind": 1,
+            "compart02Ind": 1,
+            "compart03Ind": 1,
+            "compart04Ind": 1,
+            "seals": [
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 3,
+                "original": "043919"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "043919"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "043919"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "043919"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 3,
+                "original": "043919"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "043919"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "043919"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "043919"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "043919"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "043919"
+              }
+            ]
+          }
+        ]
+      },
+      "refs": {}
+    },
+    {
+      "nodeId": "31f65b55-6462-4c7a-a451-a64e0167110c",
+      "type": "BulkTransload",
+      "id": "1155424",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Order 1155424",
+      "props": {
+        "terminal": "030",
+        "orderId": 1155424,
+        "requestDate": "2016-07-21T14:34:36.57",
+        "compNum": null,
+        "shipperCode": "BRCHI5",
+        "shipperName": "BRASKEM PP AMERICAS",
+        "shipperOrder": "1016 AGAIN",
+        "commodity_Id": "POLYPRO",
+        "commDesc": "PLASTIC POLYPROPYLENE",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "density" : 8.4,
+        "liqVacTestInd": 1,
+        "productCode": "C702-20",
+        "productName": "C702-20",
+        "unitsOrdered": 45000,
+        "liqAdjustedLoadWgt": 43000,
+        "unitOfMeasureCode": "lbs",
+        "trailer": "C7000",
+        "trailerTagId": "123",
+        "reloadTrailerInd": 0,
+        "latestDelivery": "2016-07-11T16:00:00",
+        "loaderType": "L",
+        "loaderId": 1016,
+        "preload": "L",
+        "commentId": null,
+        "comment": null,
+        "productId": 6040,
+        "railyardCode": null,
+        "liqCompart1Gals": 100,
+        "liqCompart2Gals": 200,
+        "liqCompart3Gals": null,
+        "liqCompart4Gals": 400,
+
+        "railcars": [
+          {
+            "orderId": 1155424,
+            "seqNum": 1,
+            "carId": 285772,
+            "compContentId": 290054,
+            "compartmentQuantity": 4,
+            "carNumber": "BRKX66232",
+            "track": "2",
+            "spot": 2,
+            "railyardCode": "BUCHI2",
+            "splitUnits": 45000,
+            "compart01Ind": 1,
+            "compart02Ind": 1,
+            "compart03Ind": 1,
+            "compart04Ind": 1,
+            "seals": [
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 3,
+                "original": "41837"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "41837"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "41837"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "41837"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 3,
+                "original": "41837"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "41837"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "41837"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "41837"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "41837"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "41837"
+              }
+            ]
+          }
+        ]
+      },
+      "refs": {}
+    },
+    {
+      "nodeId": "84853afd-16f2-48d6-a904-a64e0167110c",
+      "type": "BulkTransload",
+      "id": "1155423",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Order 1155423",
+      "props": {
+        "terminal": "030",
+        "orderId": 1155423,
+        "requestDate": "2016-07-11T11:22:02.093",
+        "compNum": null,
+        "shipperCode": "BRCHI5",
+        "shipperName": "BRASKEM PP AMERICAS",
+        "shipperOrder": "loader1016",
+        "commodity_Id": "POLYPRO",
+        "commDesc": "PLASTIC POLYPROPYLENE",
+        "hazmatInd": 0,
+        "unClassCode": null,
+        "density": 0,
+        "productCode": "INSPIRE-6021N",
+        "productName": "INSPIRE-6021N",
+        "unitsOrdered": 45000,
+        "unitOfMeasureCode": "lbs",
+        "trailer": "C7000",
+        "trailerTagId": "123",
+        "reloadTrailerInd": 0,
+        "latestDelivery": "2016-07-11T15:00:00",
+        "loaderType": "L",
+        "loaderId": 1016,
+        "preload": "L",
+        "commentId": null,
+        "comment": null,
+        "productId": 6198,
+        "railyardCode": null,
+        "railcars": [
+          {
+            "orderId": 1155423,
+            "seqNum": 1,
+            "carId": 285275,
+            "compContentId": 289551,
+            "compartmentQuantity": 4,
+            "carNumber": "BRKX66133",
+            "track": "888",
+            "spot": 14,
+            "railyardCode": "BUCHI2",
+            "splitUnits": 45000,
+            "compart01Ind": 1,
+            "compart02Ind": 1,
+            "compart03Ind": 1,
+            "compart04Ind": 1,
+            "seals": [
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 3,
+                "original": "046028"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "046028"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 2,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "046028"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "046028"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 2,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 3,
+                "original": "046028"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "046028"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 2,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "046028"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "046028"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "046028"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 2,
+                "original": "046028"
+              }
+            ]
+          }
+        ]
+      },
+      "refs": {}
+    },
+    {
+      "nodeId": "3f716269-d429-4508-9789-a6630126ad29",
+      "type": "BulkTransload",
+      "id": "1153772",
+      "parentType": "BulkRailyard",
+      "parentId": "BUCHI2",
+      "title": "Order 1153772",
+      "props": {
+        "terminal": "030",
+        "orderId": 1153772,
+        "requestDate": "2016-07-11T15:09:20.32",
+        "compNum": null,
+        "shipperCode": "DOCHI1",
+        "shipperName": "DOW CHEMICAL",
+        "shipperOrder": "0024593549",
+        "commodity_Id": "VERSEN",
+        "commDesc": "VERSENE",
+        "hazmatInd": 1,
+        "unClassCode": "8",
+        "density": 10.59,
+        "productCode": "100XL",
+        "productName": "100XL",
+        "unitsOrdered": 10510,
+        "unitOfMeasureCode": "lbs",
+        "trailer": "3134",
+        "trailerTagId": null,
+        "reloadTrailerInd": 0,
+        "latestDelivery": "2015-02-16T10:00:00",
+        "loaderType": "L",
+        "loaderId": 700128,
+        "preload": "L",
+        "commentId": null,
+        "comment": null,
+        "productId": 2825,
+        "liqVacTestInd": 0,
+        "liqCompart1Gals": null,
+        "liqCompart2Gals": null,
+        "liqCompart3Gals": null,
+        "liqCompart4Gals": null,
+        "liqAdjustedLoadWgt": null,
+        "railyardCode": null,
+        "railcars": [
+          {
+            "orderId": 1153772,
+            "seqNum": 1,
+            "carId": 285025,
+            "compContentId": 289299,
+            "compartmentQuantity": 4,
+            "carNumber": "DOWX3803",
+            "track": "881",
+            "spot": 15,
+            "railyardCode": "BUCHI2",
+            "splitUnits": 8820,
+            "compart01Ind": 1,
+            "compart02Ind": 0,
+            "compart03Ind": 0,
+            "compart04Ind": 0,
+            "seals": [
+              {
+                "area": "top",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "360032"
+              },
+              {
+                "area": "bottom",
+                "compartment": "A",
+                "sequence": 1,
+                "original": "1"
+              },
+              {
+                "area": "top",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "360033"
+              },
+              {
+                "area": "bottom",
+                "compartment": "AC",
+                "sequence": 1,
+                "original": "36993"
+              },
+              {
+                "area": "top",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "2"
+              },
+              {
+                "area": "bottom",
+                "compartment": "B",
+                "sequence": 1,
+                "original": "1"
+              },
+              {
+                "area": "top",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "360034"
+              },
+              {
+                "area": "bottom",
+                "compartment": "BC",
+                "sequence": 1,
+                "original": "2"
+              }
+            ]
+          }
+        ]
+      },
+      "refs": {}
+    },
+    {
+      "nodeId": "694bc0f2-ba66-46d9-9e82-a5ed0161c8df",
+      "type": "BulkProduct",
+      "id": "1074",
+      "parentType": "BulkTerminal",
+      "parentId": "089",
+      "title": "SRD7672 - UNHOIL   - POLYPRO",
+      "props": {
+        "terminal": "089",
+        "shipperCode": "UNHOIL",
+        "productId": 1074,
+        "cmd_code": "POLYPRO",
+        "productCode": "SRD7672",
+        "productName": "SRD7672"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "e37347a0-1f75-41ed-8103-a5ed0161c8df",
+      "type": "BulkProduct",
+      "id": "1082",
+      "parentType": "BulkTerminal",
+      "parentId": "089",
+      "title": "7C50 - UNHOIL   - POLYPRO",
+      "props": {
+        "terminal": "089",
+        "shipperCode": "UNHOIL",
+        "productId": 1082,
+        "cmd_code": "POLYPRO",
+        "productCode": "7C50",
+        "productName": "7C50"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "8e092e4b-2af9-4ffc-b322-a5ed0161c8e8",
+      "type": "BulkProduct",
+      "id": "728",
+      "parentType": "BulkTerminal",
+      "parentId": "089",
+      "title": "XA413AA - WEHOIL   - POLYETH",
+      "props": {
+        "terminal": "089",
+        "shipperCode": "WEHOIL",
+        "productId": 728,
+        "cmd_code": "POLYETH",
+        "productCode": "XA413AA",
+        "productName": "XA413AA"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "ea7b7b8e-4929-458e-92a2-a5ed0161c8e8",
+      "type": "BulkProduct",
+      "id": "1331",
+      "parentType": "BulkTerminal",
+      "parentId": "089",
+      "title": "WS400 - WEHOIL   - POLYETH",
+      "props": {
+        "terminal": "089",
+        "shipperCode": "WEHOIL",
+        "productId": 1331,
+        "cmd_code": "POLYETH",
+        "productCode": "WS400",
+        "productName": "WS400"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "ded0a413-5891-45c8-abe5-a5ed0161c8a1",
+      "type": "BulkProduct",
+      "id": "1693",
+      "parentType": "BulkTerminal",
+      "parentId": "089",
+      "title": "ROBIN HOOD FLOUR - NOHOIL   - WHIFLO",
+      "props": {
+        "terminal": "089",
+        "shipperCode": "NOHOIL",
+        "productId": 1693,
+        "cmd_code": "WHIFLO",
+        "productCode": "ROBIN HOOD FLOUR",
+        "productName": "ROBIN HOOD FLOUR"
+      },
+      "refs": { }
+    },
+    {
+      "nodeId": "992d5490-17f4-4f95-8a47-a5ed0161c8a1",
+      "type": "BulkProduct",
+      "id": "5023",
+      "parentType": "BulkTerminal",
+      "parentId": "089",
+      "title": "PREMIER ENR UBL UBR - NOHOIL   - WHIFLO",
+      "props": {
+        "terminal": "089",
+        "shipperCode": "NOHOIL",
+        "productId": 5023,
+        "cmd_code": "WHIFLO",
+        "productCode": "PREMIER ENR UBL UBR",
+        "productName": "PREMIER ENR UBL UBR"
+      },
+      "refs": { }
+    }
+  ],
+  "updates": null,
+  "deletes": null
+}

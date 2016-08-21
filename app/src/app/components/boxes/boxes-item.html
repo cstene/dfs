@@ -1,0 +1,9 @@
+<div class="sentbox-collection-item-view col-md-4">
+    <div class="well">
+        <h4>Message <span class="pull-right label" ng-class="item.status === 'Pending' || item.status === 'Submitted' ? 'label-warning' : item.status === 'Error' ? 'label-important' : item.status === 'Accepted' ? 'label-success' : 'label-info'">{{ ::item.status }}</span></h4>
+        <p><strong>{{ ::item.senderNote }}</strong></p>
+        <p class="text-muted">
+            {{ ::getLocalDate(item); }}
+        </p>
+    </div>
+</div>

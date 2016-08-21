@@ -1,0 +1,19 @@
+﻿@import '../base/_colors.less';
+@import './_animation.less';
+
+.app-form-validations {
+    [ng-messages], ng-messages {
+        color: @assertive;
+
+
+    }
+
+    [ng-message], ng-message{
+        .app-animate-fadein;
+    }
+
+    input.ng-invalid {
+        border-left: 4px solid @assertive;
+    }
+}
+

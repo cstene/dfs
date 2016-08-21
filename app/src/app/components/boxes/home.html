@@ -1,0 +1,31 @@
+﻿<div cyan-boxes-header inbox-state="inbox"></div>
+
+<div ng-show="box == 'outbox'" messages="collection" out-sent></div>
+<div ng-show="box == 'sentbox'" messages="collection" out-sent></div>
+
+<div ng-show="box == 'inbox'">
+    <div class="home-view container home-view-item">
+        <div class="row">
+            <button class="btn center-block" ng-click="goToInbound()">
+                <i class="fa fa-level-down fa-5x"></i>
+                <br />Inbound
+                <span class="badge badge-notify">{{inboundCount}}</span>
+            </button>
+           
+        </div>
+        <div class="row">
+            <a class="btn center-block" ui-sref="transload.list()">
+                <i class="fa fa-truck fa-5x"></i>
+                <br />Transload
+                <span class="badge badge-notify">{{transloadCount}}</span>
+            </a>            
+        </div>
+        <div class="row">
+            <a class="btn center-block" ui-sref="outbound.list()">
+                <i class="fa fa-level-up fa-5x"></i>
+                <br />Outbound
+                <span class="badge badge-notify">{{outboundCount}}</span>
+            </a>
+        </div>
+    </div>
+</div>

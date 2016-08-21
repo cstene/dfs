@@ -1,0 +1,4 @@
+﻿<app-photo-row ng-repeat="item in $ctrl.photos | orderBy:'-created' track by item.fileName"
+               actions="$ctrl.actions"
+               model="item">
+</app-photo-row>

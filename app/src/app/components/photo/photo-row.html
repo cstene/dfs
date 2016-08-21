@@ -1,0 +1,34 @@
+﻿<div class="photo-row well">
+    <div class="row">
+        <div class="col-xs-12">
+            <img ng-src="{{::$ctrl.model.fileUri}}" width="100%" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <dl style="margin-bottom: 0">
+                <dt>
+                    Filename
+                </dt>
+                <dd>{{::$ctrl.model.fileName}}</dd>
+                <dt>
+                    Created
+                </dt>
+                <dd>{{::$ctrl.model.created | amUtc | amLocal | amDateFormat: 'MM-DD-YYYY HH:mm'}}</dd>
+            </dl>
+        </div>
+
+        <div class="col-xs-6">
+            <dl style="margin-bottom: 0">
+                <dt>Size</dt>
+                <dd>{{::$ctrl.model.fileSizeKb}} KB</dd>
+            </dl>
+        </div>
+        <div class="col-xs-6">
+            <div class="pull-right">
+                <button class="btn btn-lg btn-danger" ng-click="$ctrl.actions.removePhoto($ctrl.model.fileUri)"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+
+    </div>
+</div>

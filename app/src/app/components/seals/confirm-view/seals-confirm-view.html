@@ -1,0 +1,6 @@
+﻿<div>
+    <seals-confirm-compartment ng-repeat="item in $ctrl.collection | orderBy:'sequence':$ctrl.options.reverse track by item.sequence"
+                               model="item"
+                               >
+    </seals-confirm-compartment>
+</div>

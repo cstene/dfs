@@ -1,0 +1,21 @@
+﻿<div class="app-seal-row" layout ng-class="{selected: $ctrl.isSelected}">
+
+    <div flex layout class="app-seal-input-group col1">
+        <app-seal-input name="original" flex 
+                        model="$ctrl.model.original" 
+                        on-change="$ctrl.sealValueChanged('original', value)"
+                        on-clear="$ctrl.originalCleared()"
+                         >
+        </app-seal-input>
+    </div>
+
+    <div flex layout class="app-seal-input-group col2">
+        <app-seal-input name="reseal" flex 
+                        model="$ctrl.model.reseal"
+                        on-change="$ctrl.sealValueChanged('reseal', value)"
+                        on-clear="$ctrl.resealCleared()"
+                        >
+        </app-seal-input>
+    </div>
+
+</div>

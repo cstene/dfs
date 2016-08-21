@@ -1,0 +1,23 @@
+﻿<div layout>
+    <input type="number" flex
+
+           app-trim-lead-zeroes
+
+           app-restrict-keys="numbers"
+           allow-enter
+           allow-tab
+           allow-backspace
+           app-string-to-int
+
+           ng-model="$ctrl.model"
+           ng-change="$ctrl.onChange({value: $ctrl.model})"     
+           ng-blur="$ctrl.onBlur()"      
+            />
+
+    <button class="btn" flex="12"
+            ng-if="$ctrl.model"
+            ng-click="$ctrl.onClear($event)"
+            >
+        <span class="fa fa-remove"></span>
+    </button>
+</div>

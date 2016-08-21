@@ -1,0 +1,124 @@
+﻿@import '../../app.less';
+
+.form-complete {
+    seal-confirm-row.ng-invalid-seal, app-seal-row.ng-invalid-seal {
+        border: 1px solid @assertive;
+        border-radius: 3px;
+
+        input {
+            background-color: @assertive-light;
+        }
+    }
+}
+
+.fa-cog-green{
+    color:green;
+}
+
+.fa-cog-red{
+    color: red;
+}
+
+seals-confirm-compartment section.well,app-compartmentarea section.well {
+    .app-animate-fadein;
+    padding: 2px;
+    min-height: 8em;
+
+    header.app-compartment-header {
+        font-weight: bold;
+        text-transform: capitalize full-width;
+        padding: 2px;
+        text-align: center;
+        .app-fg-light;
+        .app-bg-positive;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+    }
+
+    header.app-compartment-header.seal-compartment-b, header.app-compartment-header.app-compartment-b {
+        .app-bg-assertive;
+    }
+
+    content header button {
+        margin-left: 5px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+
+    .seal-confirm-row, .app-seal-row {
+        padding: 2px;
+    }
+
+    seal-confirm-row,app-seal-row {
+        button {
+            padding: 1px 10px;
+            background-color: @light;
+            border-radius: 0;
+        }
+
+        input:focus {
+            font-weight: 600;
+            .app-fg-light;
+            .app-bg-calm;
+        }
+
+
+        input:focus + button {
+            .app-fg-light;
+            .app-bg-calm;
+        }
+    }
+
+
+
+    seal-confirm-row.ng-enter, app-seal-row.ng-enter {
+        .app-animate-fadein;
+    }
+}
+
+.app-compartmentarea-label {
+    .app-bg-positive;
+    border-radius: 2px;
+    padding-right: 3px;
+}
+
+.app-compartmentarea-label-text {
+    .app-fg-light;
+    font-weight: bold;
+    text-transform: capitalize full-width;
+    letter-spacing: 1.5px;
+    stroke-width: 2em;
+}
+
+.app-seal-input-group {
+    app-seal-input:focus {
+        outline: none;
+        box-shadow: 0 0 5px @royal;
+    }
+
+    input:focus {
+        outline: none;        
+    }
+
+    input {
+        outline: none;
+        border: none;
+        padding: 5px 5px;
+        
+    }
+    /*
+        input {
+        outline: none;
+        border: none;
+        padding: 1px 5px;
+    }
+
+
+    button {
+    }*/
+}
+
+.app-seal-input-group.col1 {
+    margin-right: 4px;
+}

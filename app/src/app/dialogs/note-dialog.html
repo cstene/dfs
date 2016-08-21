@@ -1,0 +1,26 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title text-center"><span ng-show="vm.isRequired">Mandatory</span> Note</h3>
+</div>
+<div class="modal-body">
+    <textarea autofocus="autofocus" maxlength="4000" class="form-control" rows="9" ng-model="vm.content"></textarea>
+
+    <div layout layout-padding layout-align="space-between">
+
+        <button class="btn btn-warning btn-lg" type="button" ng-click="vm.cancel()">
+            <span class="fa fa-times fa-lg"></span>
+            Cancel
+        </button>
+
+        <button class="btn btn-default btn-lg" ng-click="vm.photo()" ng-disabled="vm.isPhotosDisabled">
+            &nbsp;
+            <span class="fa fa-lg fa-camera"></span>
+            &nbsp;
+        </button>
+
+        <button class="btn btn-primary btn-lg" type="button" ng-click="vm.save()" ng-disabled="vm.isSaveDisabled">
+            Save
+            <span class="fa fa-floppy-o fa-lg"></span>
+        </button>
+
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿{
+    "BASE_URI": "https://api-dev.cyan.us.com",
+    "COMMUNICATION_MODE": "WebServices",
+    "Last language": "en",
+    "LOG_LEVEL": "DEBUG",
+    "PASSWORD": "CyanDemo",
+    "TENANT_ACCESS_KEY": "bulkmatic",
+    "USERNAME": "bulkmaticadmin"
+}
