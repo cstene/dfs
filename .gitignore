@@ -1,4 +1,4 @@
 app/src/vendor
 app/dist
-.idea
-node_modules
+.idea/
+node_modules/
