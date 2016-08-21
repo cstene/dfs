@@ -6,7 +6,8 @@
         .controller('DfsHomeController', DfsHomeController);
 
     function DfsHomeController(
-        $log
+        $log,
+        OddsService
     ) {
         'ngInject';
 
@@ -16,8 +17,12 @@
             vm = this;
 
         Object.assign(vm, {
-            title: "dfs home"
+            fetchSaveOdds: fetchSaveOdds
         });
+
+        function fetchSaveOdds(){
+            OddsService.getWeeklyOdds();
+        }
     }
 
 })();

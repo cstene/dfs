@@ -44,8 +44,8 @@ Object.assign(cfg, {
         cfg.isLocalDev
             ? 'cyan-client-ng-core/dist/cyan-desktop.js'
             : 'cyan-client-ng-core/dist/cyan-native-debug.js',
-        'cyan-client-ng-bootstrap/dist/cyan-ng-bootstrap-debug.js'
-
+        'cyan-client-ng-bootstrap/dist/cyan-ng-bootstrap-debug.js',
+        'angular-xml2json/angular-xml2json.js'
     ].map(function (file) {
         return path.join(cfg.vendorroot, file);
     }),

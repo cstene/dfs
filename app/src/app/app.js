@@ -61,7 +61,8 @@
             "ngMaterial",
             "cyan-ng-mixins",
             "ngMessages",
-            "ngSanitize"
+            "ngSanitize",
+            "angularXml2json"
         ])
         .config(_config)
         .decorator("$state", PreviousStateDecorator)
@@ -70,11 +71,13 @@
     /**
      * Configures app infrastructure before the app runs.
      */
-    function _config($urlRouterProvider) {
+    function _config($urlRouterProvider, $httpProvider) {
         "ngInject";
 
         // Redirect to the Login screen if the URL is not recognized.
         $urlRouterProvider.otherwise("/dfs");
+
+        $httpProvider.defaults.useXDomain = true;
     }
 
     /**
