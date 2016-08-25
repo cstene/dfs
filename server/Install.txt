@@ -1,0 +1,5 @@
+Issues installing xml2json
+
+https://github.com/nodejs/node-gyp#installation
+
+http://landinghub.visualstudio.com/visual-cpp-build-tools

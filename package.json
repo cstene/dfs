@@ -4,7 +4,11 @@
   "description": "Blue Dot custom Cyan application for Bulkmatic.",
   "author": "Blue Dot Solutions",
   "dependencies": {
-    "bower": "^1.7.9"
+    "bower": "^1.7.9",
+    "httpdispatcher": "^1.0.0",
+    "lodash": "^4.15.0",
+    "mongodb": "^2.2.8",
+    "xml2json": "^0.10.0"
   },
   "devDependencies": {
     "browser-sync": "^2.12.1",
