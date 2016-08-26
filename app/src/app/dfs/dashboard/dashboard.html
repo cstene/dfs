@@ -1,6 +1,43 @@
 <div class="container">
     <div class="well">
-        <h1>Fetch Data</h1>
-        <a class="btn btn-default btn-lg" ng-click="$ctrl.fetchSaveOdds()">Fetch and Save Weekly Odds</a>
+        <h1>Vegas Projection</h1>
+        <h2>Concepts</h2>
+        <ul>
+            <li>Want to use offensive players from teams with high team totals. we want to target defenses facing teams with low totals.</li>
+            <ul>
+                <li>QB</li>
+                <ul>
+                    <li>Target underdog QB’s in games with high team totals and close spreads, ideally, but not necessarily, playing at home.</li>
+                    <li>Avoid QB’s in division match-ups, particularly later in the season.</li>
+                    <li>Avoid QB’s and Pass Catchers in games with spreads over -8 that are likely to develop into blowouts.</li>
+                </ul>
+                <li>RB - Lines are more useful for running backs, teams projected to score 30 or more points in a game rush for 14% more than teams projected at 21 and 33% more than teams at 14 or less.</li>
+                <ul>
+                    <li>Target RB’s on heavily favored teams playing at home.</li>
+                    <li>Take advantage of RB’s filling in for injured starters.</li>
+                    <li>In cash games try to use RB’s that are not affected as much by game flows. This generally means spending up for consistent backs.</li>
+                </ul>
+                <li>WR</li>
+                <ul>
+                    <li>Look for games with high totals and close spreads of 4 points or less</li>
+                    <li>Don’t shy away from choosing WR’s on underdogs particularly when they are playing at home.</li>
+                    <li> When facing an elite CB, consider pivoting to a team’s WR2 as a value play, particularly if the CB shadows WR1’s and the WR2 is a viable stand alone WR </li>
+                </ul>
+                <li>K & DST</li>
+                <ul>
+                    <li>Chose defenses from favored teams playing at home in games with low totals. Ideally, teams should be heavily favored with spreads at -7 or above.</li>
+                    <li>Whenever possible, pair up DST with the Kicker to take advantage of the correlation between the two positions.</li>
+                </ul>
+            </ul>
+            <li>WE can make assumptions regarding how many tds or fgs. Start of year use stats from last year, after week 8 should be using solely this years stats.</li>
+            <ul>
+                <li>Passing TDs = Total Points / 7 * % of tds over last 8-16 games</li>
+                <li>WR/TE TDs = Passing Tds * % of td caches over last 8-16 games</li>
+            </ul>
+            <li>Vegas lines allow us to qunatify the effect and do it in a really efficient way so we can spend precious research time elsewhere.</li>
+            <li>Vegas lines is a really accurate way to figure out the most likley thing thats going to happen and use that to win in cash games. In tournaments use the lines as a tool to predict player utilization.</li>
+            <li>Weather is not projected well in vegas lines. Lines are out before weather forcast.</li>
+        </ul>
+
     </div>
 </div>

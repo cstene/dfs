@@ -1,5 +1,3 @@
 Issues installing xml2json
 
-https://github.com/nodejs/node-gyp#installation
-
-http://landinghub.visualstudio.com/visual-cpp-build-tools
+xml2json requires new version of node.js and python.
