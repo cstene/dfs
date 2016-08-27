@@ -4,6 +4,7 @@ var xml2json = require('xml2json');
 var _ = require('lodash');
 var mongo = require('mongodb').MongoClient;
 var nameres = require('./helper/nameresolver.js');
+var settings = require('./settings.js');
 var nflYear = 2016;
 var nflWeek = 1;
 
@@ -38,7 +39,7 @@ http.request(options, function(result){
 }).end();
 
 function saveToMongo(games){
-    var url = 'mongodb://localhost:27017/dfs';
+    var url = settings.dbConnection;
     mongo.connect(url, function(err, db) {
         console.log("Connected correctly to server.");
         var gamesCollection = db.collection('games');
@@ -90,7 +91,7 @@ function mapToGameNode(odds){
         }
         else{
             game.vegasHomeScore = score;
-            game.vegasAwaySCore = score + Math.abs(game.homeSpread);
+            game.vegasAwayScore = score + Math.abs(game.homeSpread);
         }
 
         return game;

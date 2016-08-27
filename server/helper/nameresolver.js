@@ -9,7 +9,7 @@ exports.resolveTeamName = function(name){
     {
         throw "Failed to resolve team name" + name;
     }
-    
+
     return team.id;
 };
 
