@@ -44,12 +44,13 @@ function saveToMongo(games){
         console.log("Connected correctly to server.");
         var gamesCollection = db.collection('games');
 
-        console.log("Removing old files");
-        gamesCollection.remove({nflYear:games.nflYear, nflWeek:games.nflWeek});
-
-        console.log("Insert net file");
-        gamesCollection.insert(games);
-        db.close();
+        gamesCollection.deleteMany({nflYear:games.nflYear, nflWeek:games.nflWeek},function(err,r){
+            console.log("Remove games: " + r.deletedCount);
+            gamesCollection.insert(games, function(err, r){
+                console.log("Games saved");
+                db.close();
+            });
+        });
     });
 }
 
