@@ -1,11 +1,15 @@
 //Lets require/import the HTTP module
 var http = require('http');
-var dispatcher = require('httpdispatcher');
 var xml2json = require('xml2json');
 var _ = require('lodash');
 var mongo = require('mongodb').MongoClient;
+var nameres = require('./helper/nameresolver.js');
+var nflYear = 2016;
+var nflWeek = 1;
 
 console.log("Pulling odds data");
+console.log("nfl Year: " + nflYear);
+console.log("nfl Week: " + nflWeek);
 
 var options = {
     host: 'xml.pinnaclesports.com',
@@ -29,7 +33,7 @@ http.request(options, function(result){
         var json = xml2json.toJson(oddsData, xmlOptions);
         var gameNode = mapToGameNode(json);
         saveToMongo(gameNode);
-        console.log(JSON.stringify(gameNode));
+        //console.log(JSON.stringify(gameNode));
     });
 }).end();
 
@@ -66,17 +70,14 @@ function mapToGameNode(odds){
      }
      */
 
-    var nflYear = 2016;
-    var nflWeek = 1;
-
     console.log("Mapping to game node...");
 
     var games = _.map(odds.pinnacle_line_feed.events.event, function(g){
         var game = {
             gameDateTimeUtc: new Date(g.event_datetimeGMT),
             //Assuming first participant is always away and second is always home, this might not be true.
-            awayTeam: g.participants.participant[0].participant_name,
-            homeTeam: g.participants.participant[1].participant_name,
+            awayTeam: nameres.resolveTeamName(g.participants.participant[0].participant_name),
+            homeTeam: nameres.resolveTeamName(g.participants.participant[1].participant_name),
             homeSpread: g.periods.period.spread.spread_home,
             vegasTotalPoints: g.periods.period.total.total_points
         };
