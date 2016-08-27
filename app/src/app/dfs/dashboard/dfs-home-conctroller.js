@@ -6,8 +6,7 @@
         .controller('DfsHomeController', DfsHomeController);
 
     function DfsHomeController(
-        $log,
-        OddsService
+        $log
     ) {
         'ngInject';
 
@@ -16,13 +15,20 @@
         var
             vm = this;
 
-        Object.assign(vm, {
-            fetchSaveOdds: fetchSaveOdds
-        });
 
-        function fetchSaveOdds(){
-            OddsService.getWeeklyOdds();
-        }
+        Object.assign(vm, {
+            gridOptions:{
+                enableSorting: true,
+                columnDefs:[
+                    {name: 'Home Team', field:'homeTeam'},
+                    {name: 'Away Team', field:'awayTeam'}
+                ],
+                data:[
+                    {"homeTeam": "DEN", awayTeam: "CAR"}
+                ]
+            }
+
+        });
     }
 
 })();

@@ -15,9 +15,10 @@
     "string": "stringjs#^3.3.1",
     "animate.css": "^3.5.1",
     "validate": "validate.js#^0.9.0",
-    "angular-xml2json": "^0.0.2"
+    "angular-xml2json": "^0.0.2",
+    "angular-ui-grid": "^3.2.1"
   },
   "resolutions": {
-    "angular": ">=1.5.3"
+    "angular": "1.5.7"
   }
 }

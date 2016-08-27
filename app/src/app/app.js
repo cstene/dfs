@@ -62,7 +62,8 @@
             "cyan-ng-mixins",
             "ngMessages",
             "ngSanitize",
-            "angularXml2json"
+            "angularXml2json",
+            "ui.grid"
         ])
         .config(_config)
         .decorator("$state", PreviousStateDecorator)

@@ -37,6 +37,7 @@ Object.assign(cfg, {
         'angular-aria/angular-aria.js',
         'angular-material/angular-material.js',
         'validate/validate.js',
+        'angular-ui-grid/ui-grid.js',
         //
         // cyan
         'cyan-client-ng-core/lib/rncryptor.js',
@@ -91,6 +92,16 @@ Object.assign(cfg, {
             ],
             dest: 'app/dist/img'
         },
+        // CSS
+        {
+            src:[
+                'app/src/vendor/angular-ui-grid/ui-grid.eot',
+                'app/src/vendor/angular-ui-grid/ui-grid.svg',
+                'app/src/vendor/angular-ui-grid/ui-grid.ttf',
+                'app/src/vendor/angular-ui-grid/ui-grid.woff'
+            ],
+            dest: 'app/dist/css'
+        }
     ]
 });
 
