@@ -1,93 +1,123 @@
 //Lets require/import the HTTP module
+var Promise = require('promise');
 var http = require('http');
 var xml2json = require('xml2json');
 var _ = require('lodash');
 var mongo = require('mongodb').MongoClient;
 var settings = require('./settings.js');
-var nflYear = [2009, 2010, 2011, 2012, 2013, 2014, 2015];
-var nflWeek = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-var nflType = 'REG';
+var e = require('./helper/errorhandler.js');
+//var nflYear = [2009, 2010, 2011, 2012, 2013, 2014, 2015];
+//var nflTypes = ['REG', 'POST', 'PRE'];
+//var nflWeeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+var nflWeeks = [17];
+var nflYears = [2015];
+var nflTypes = ['REG'];
+var rawDataCol;
 
-console.log("Pulling game data");
+fetchRawNflData(nflYears, nflWeeks, nflTypes);
 
-var schedReq = {
-    host: 'www.nfl.com',
-    port: 80,
-    path: '/ajax/scorestrip?season=2015&seasonType=REG&week=1',
-    method: 'GET'
-};
+function fetchRawNflData(years, weeks, types) {
+    mongo.connect(settings.dbConnection, function (err, db) {
+        e.checkError(err);
 
-console.log(schedReq);
+        rawDataCol = db.collection('raw_nfl_data');
 
-http.request(schedReq, function (result) {
-    var schedData = '';
-    result.on('data', function (chunk) {
-        schedData += chunk;
+        _.each(years, function (y) {
+            _.each(weeks, function (w) {
+                _.each(types, function (t) {
+                    //Get Nfl schedule.
+                    fetchNflSchedule(y, w, t)
+                        .then(fetchGames)
+                        .then(saveGames)
+                        .catch(function(err){
+                            console.log(err);
+                        })
+                        .finally(function () {
+                            console.log("done");
+                            db.close();
+                        });
+                });
+            });
+        });
     });
 
-    result.on('end', function (err) {
-        if (err) {
-            console.log(err);
-            return;
-        }
+    function saveGames(gamesJson) {
+        var gamesJson = _.map(gamesJson, function (g) {
+            g.scrsummary = _.map(g.scrsummary, function (s) {
+                s.players = _.invert(s.players);
+                return s;
+            });
+            return g;
+        });
 
-        var xmlOptions = {
-            object: true
-        };
-        var schedDataJson = xml2json.toJson(schedData, xmlOptions);
-        console.log(JSON.stringify(schedDataJson));
-        getAndSaveGameData(schedDataJson);
-    });
-}).end();
+        return new Promise(function (accept, reject) {
+            rawDataCol.insert(gamesJson, function (err, r) {
+                reject(err);
 
-function getAndSaveGameData(sched) {
-    console.log('Year:' + sched.ss.gms.y + ' Week:' + sched.ss.gms.w);
-    _.each(sched.ss.gms.g, function (game) {
-        console.log(game.v + 'vs' + game.h);
+                console.log("Save result count: " + r.insertedCount);
+
+                accept();
+            });
+        });
+    }
+}
+
+function fetchGames(schedule) {
+    var promises = [];
+    _.each(schedule.ss.gms.g, function (g) {
         var gameReq = {
             host: 'www.nfl.com',
             port: 80,
-            path: '/liveupdate/game-center/' + game.eid + '/' + game.eid + '_gtd.json',
+            path: '/liveupdate/game-center/' + g.eid + '/' + g.eid + '_gtd.json',
             method: 'GET'
         };
 
-        http.request(gameReq, function (gameResult) {
-            var gameData = '';
+        console.log('Fetch Game: ' + g.v + '@' + g.h);
 
-            gameResult.on('data', function (chunk) {
-                gameData += chunk;
-            });
+        promises.push(new Promise(function (accept, reject) {
+            http.request(gameReq, function (res) {
+                var gameJson = '';
+                res.on('data', function (chunk) {
+                    gameJson += chunk;
+                });
 
-            gameResult.on('end', function (err) {
-                if (err) {
-                    console.log(err);
-                    return;
-                }
+                res.on('end', function (err) {
+                    if (err) {
+                        reject(err);
+                    }
+                    accept(JSON.parse(gameJson)[g.eid]);
+                })
+            }).end();
+        }));
+    });
 
-                saveToMongo(JSON.parse(gameData)[game.eid]);
-            })
-        }).end()
-    })
+    return Promise.all(promises);
 }
 
-function saveToMongo(statsNode) {
-    var url = settings.dbConnection;
-    mongo.connect(url, function (err, db) {
-        console.log("Connected correctly to server.");
-        var statsCollection = db.collection('nfl_game_stats');
+function fetchNflSchedule(year, week, type) {
+    var schedReq = {
+        host: 'www.nfl.com',
+        port: 80,
+        path: '/ajax/scorestrip?season=' + year + '&seasonType=' + type + '&week=' + week,
+        method: 'GET'
+    };
 
-        //This is a bit of a mess and needs to be played with. Hacking off scrsummary for now.
-        delete statsNode.scrsummary;
+    console.log('Get Schedule ' + type + ' week' + week + ' ' + year);
 
-        statsCollection.insert(statsNode, function (err, r) {
-            if (err) {
-                console.log(err);
-                db.close();
-                return;
-            }
+    return new Promise(function (accpet, reject) {
+        http.request(schedReq, function (res) {
+            var schedule = '';
+            res.on('data', function (chunk) {
+                schedule += chunk;
+            });
 
-            db.close();
-        });
+            res.on('end', function (err) {
+                if (err) {
+                    reject(err);
+                }
+                accpet(xml2json.toJson(schedule, {object: true}));
+            })
+        }).end();
     });
 }
 
