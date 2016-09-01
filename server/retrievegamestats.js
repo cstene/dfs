@@ -28,8 +28,10 @@ function fetchRawNflData(years, weeks, types) {
                     //Get Nfl schedule.
                     fetchNflSchedule(y, w, t)
                         .then(fetchGames)
-                        .then(saveGames)
-                        .catch(function(err){
+                        .then(function (result) {
+                            return saveGames(result, y, w, t);
+                        })
+                        .catch(function (err) {
                             console.log(err);
                         })
                         .finally(function () {
@@ -41,8 +43,45 @@ function fetchRawNflData(years, weeks, types) {
         });
     });
 
-    function saveGames(gamesJson) {
-        var gamesJson = _.map(gamesJson, function (g) {
+    function mapPlayerStats(rawStats, playerStats, team){
+         _.map(rawStats, function (pos, key) {
+            if (key === 'team') {
+                return;
+            }
+
+            pos = _.map(pos, function (k) {
+                k.playerId = Object.getOwnPropertyNames(pos)[0];
+                k.team = team;
+                return k;
+            });
+
+             if(!playerStats[key]){
+                 playerStats[key] = pos;
+             }
+             else{
+                 playerStats[key] = _.concat(playerStats[key],pos);
+             }
+        });
+    }
+
+    function saveGames(gamesJson, y, w, t) {
+        gamesJson = _.map(gamesJson, function (g) {
+            Object.assign(g, {
+                year: y,
+                week: w,
+                type: t,
+                homeTeam: g.home.abbr,
+                awayTeam: g.away.abbr
+            });
+
+            g.playerStats = {};
+
+            mapPlayerStats(g.home.stats, g.playerStats, g.homeTeam);
+            mapPlayerStats(g.away.stats, g.playerStats, g.awayTeam);
+
+            g.home.stats = g.home.stats['team'];
+            g.away.stats = g.away.stats['team'];
+
             g.scrsummary = _.map(g.scrsummary, function (s) {
                 s.players = _.invert(s.players);
                 return s;
@@ -64,32 +103,33 @@ function fetchRawNflData(years, weeks, types) {
 
 function fetchGames(schedule) {
     var promises = [];
-    _.each(schedule.ss.gms.g, function (g) {
-        var gameReq = {
-            host: 'www.nfl.com',
-            port: 80,
-            path: '/liveupdate/game-center/' + g.eid + '/' + g.eid + '_gtd.json',
-            method: 'GET'
-        };
+    //_.each(schedule.ss.gms.g, function (g) {
+    var g = schedule.ss.gms.g[0];
+    var gameReq = {
+        host: 'www.nfl.com',
+        port: 80,
+        path: '/liveupdate/game-center/' + g.eid + '/' + g.eid + '_gtd.json',
+        method: 'GET'
+    };
 
-        console.log('Fetch Game: ' + g.v + '@' + g.h);
+    console.log('Fetch Game: ' + g.v + '@' + g.h);
 
-        promises.push(new Promise(function (accept, reject) {
-            http.request(gameReq, function (res) {
-                var gameJson = '';
-                res.on('data', function (chunk) {
-                    gameJson += chunk;
-                });
+    promises.push(new Promise(function (accept, reject) {
+        http.request(gameReq, function (res) {
+            var gameJson = '';
+            res.on('data', function (chunk) {
+                gameJson += chunk;
+            });
 
-                res.on('end', function (err) {
-                    if (err) {
-                        reject(err);
-                    }
-                    accept(JSON.parse(gameJson)[g.eid]);
-                })
-            }).end();
-        }));
-    });
+            res.on('end', function (err) {
+                if (err) {
+                    reject(err);
+                }
+                accept(JSON.parse(gameJson)[g.eid]);
+            })
+        }).end();
+    }));
+    //});
 
     return Promise.all(promises);
 }
