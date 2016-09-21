@@ -6,7 +6,7 @@ var mongo = require('mongodb').MongoClient;
 var nameres = require('./helper/nameresolver.js');
 var settings = require('./settings.js');
 var nflYear = 2016;
-var nflWeek = 1;
+var nflWeek = 2;
 
 console.log("Pulling odds data");
 console.log("nfl Year: " + nflYear);
@@ -75,24 +75,53 @@ function mapToGameNode(odds){
     console.log("Mapping to game node...");
 
     var games = _.map(odds.pinnacle_line_feed.events.event, function(g){
+        var period = (g.periods.period && Array.isArray(g.periods.period)) ? g.periods.period[0] : g.periods.period;
+
+        if(!period){
+            // The game is off.
+            return {
+                gameDateTimeUtc: new Date(g.event_datetimeGMT),
+                //Assuming first participant is always away and second is always home, this might not be true.
+                awayTeam: nameres.resolveTeamName(g.participants.participant[0].participant_name),
+                homeTeam: nameres.resolveTeamName(g.participants.participant[1].participant_name),
+                homeSpread: "off",
+                vegasTotalPoints: "off",
+                vegasHomeScore: "off",
+                vegasAwayScore: "off"
+            };
+        }
+        if(period.period_number !== "0")
+        {
+            //This is not a real game.
+            return {};
+        }
+
         var game = {
             gameDateTimeUtc: new Date(g.event_datetimeGMT),
             //Assuming first participant is always away and second is always home, this might not be true.
             awayTeam: nameres.resolveTeamName(g.participants.participant[0].participant_name),
             homeTeam: nameres.resolveTeamName(g.participants.participant[1].participant_name),
-            homeSpread: g.periods.period.spread.spread_home,
-            vegasTotalPoints: g.periods.period.total.total_points
+            homeSpread: period.spread.spread_home
         };
 
-        var score = game.vegasTotalPoints / 2;
+        if(period.total){
+            game.vegasTotalPoints = period.total.total_points;
 
-        if(game.homeSpread < 0){
-            game.vegasHomeScore = score + Math.abs(game.homeSpread);
-            game.vegasAwaySCore = score;
+            var score = game.vegasTotalPoints / 2;
+
+            if(game.homeSpread < 0){
+                game.vegasHomeScore = score + Math.abs(game.homeSpread);
+                game.vegasAwaySCore = score;
+            }
+            else{
+                game.vegasHomeScore = score;
+                game.vegasAwayScore = score + Math.abs(game.homeSpread);
+            }
         }
         else{
-            game.vegasHomeScore = score;
-            game.vegasAwayScore = score + Math.abs(game.homeSpread);
+            game.vegasTotalPoints = "off";
+            game.vegasHomeScore = "off";
+            game.vegasAwayScore = "off";
         }
 
         return game;
@@ -103,7 +132,7 @@ function mapToGameNode(odds){
         nflYear : nflYear,
         nflWeek : nflWeek,
         pinnacleLastGame: odds.pinnacle_line_feed.lastGame,
-        games: games
+        games: _.without(games,{})
     }
 };
 
